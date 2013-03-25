@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.journey.base.auth.repository.mybatis.ResourceMybatisDao">
+		<!-- 根据传入的角色，获取相关资源信息, 输出用resultMap关联对象 -->
+	<select id="getResourceByRole" parameterType="Map" resultType="com.journey.base.auth.entity.Resource">
+			select 
+				t1.id as "id",
+				t1.created_datetime as "createdDatetime",
+				t1.creator_id as "creatorId",
+				t1.del_flag as "delFlag",
+				t1.last_modified_datetime as "lastModifiedDatetime",
+				t1.last_modifier_id as "lastModifierId",
+				t1.ext1 as "ext1",
+				t1.ext2 as "ext2",
+				t1.ext3 as "ext3",
+				t1.ext4 as "ext4",
+				t1.ext5 as "ext5",
+				t1.ext6 as "ext6",
+				t1.ext7 as "ext7",
+				t1.ext8 as "ext8",
+				t1.ext9 as "ext9",
+				t1.other_exts as "otherExts",
+				t1.parent_res_code as "parentResCode",
+				t1.parent_res_type_code as "parentResTypeCode",
+				t1.remark as "remark",
+				t1.res_code as "resCode",
+				t1.res_name as "resName",
+				t1.res_sequence as "resSequence",
+				t1.res_type_code as "resTypeCode",
+				t1.status as "status",
+				t1.level as "level"
+			 from 
+				j_resource  t1
+				<if test="roleCode != null">
+					, j_authorization t2
+				</if>
+			<where> 
+				1=1
+				<if test="roleCode != null">
+					and t1.res_code=t2.res_code
+					and t2.role_code=#{roleCode}
+				</if>
+			</where>
+			order by  t1.res_type_code,t1.level,t1.parent_res_code,t1.res_sequence
+		</select>
+		
+</mapper> 

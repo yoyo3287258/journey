@@ -1,0 +1,42 @@
+/* 
+	LEVEL ONE
+*/
+ul.dropdown                         { position: relative; }
+ul.dropdown li                      { font-size: large; font-weight: bold; float: left; zoom: 1; background: url("images/header_bg.png") repeat-x scroll 0 0 #FFFFFF; color: #300068; }
+
+ul.dropdown li a                    { display: block; padding: 4px 8px; border-right: 1px solid #333;
+	 								  color: #300068; }
+ul.dropdown li:last-child a         { border-right: none; } /* Doesn't work in IE */
+ul.dropdown li.hover,
+ul.dropdown li:hover                { background: #F3D673; color: 300068; position: relative; }
+ul.dropdown li.hover a              { color: 300068; }
+
+
+/* 
+	LEVEL TWO
+*/
+ul.dropdown ul 						{  visibility: hidden; position: absolute; top: 100%; left: 0; }
+ul.dropdown ul li 					{ font-weight: normal; background: #f6f6f6; color: #300068; 
+									  border-bottom: 1px solid #ccc; float: none; padding: 4px 4px;}
+									  
+                                    /* IE 6 & 7 Needs Inline Block */
+ul.dropdown ul li a					{white-space:nowrap; border-right: none; width: 100%; display: inline-block; } 
+
+/* 
+	LEVEL THREE
+*/
+ul.dropdown ul ul 					{ left: 100%; top: 0; }
+ul.dropdown li:hover > ul 			{ visibility: visible; }
+
+/**
+	子菜单的三角图标
+*/
+.hasChildMenuItem					{
+	background-image:url(../../jquery-ui/1.9.2/css/start/images/ui-icons_0078ae_256x240.png);
+	background-repeat:no-repeat; background-position: -64px -16px;
+	display:block;
+	margin-right:3px; 
+	display:inline-block; 
+	height: 16px;
+	width: 16px;
+	}

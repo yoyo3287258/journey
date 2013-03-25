@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.journey.base.auth.repository.mybatis.CodeTypeMybatisDao">
+		<!-- 根据传入的类型代码、类型名称、从属的组别获取相关码表类型信息 -->
+	<select id="getCodeTypeByCondition" parameterType="Map" resultType="com.journey.base.auth.entity.CodeType">
+			select 
+				t1.id as "id",
+				t1.type_code as "typeCode",
+				t1.type_name as "typeName",
+				t1.group_name as "groupName",
+				t1.remark as "remark"
+			 from 
+				j_code_type  t1
+			<where> 
+				1=1
+				<if test="typeCode != null">
+					and t1.type_code=#{typeCode}
+				</if>
+				<if test="typeName != null">
+					and t1.type_name=#{typeName}
+				</if>
+				<if test="groupName != null">
+					and t1.group_name=#{groupName}
+				</if>
+			</where>
+			order by  t1.type_code
+		</select>
+		
+		<select id="getCountOfCodeTypeByCondition" parameterType="Map" resultType="Integer">
+			select 
+				count(*)
+			 from 
+				j_code_type  t1
+			<where> 
+				1=1
+				<if test="typeCode != null">
+					and t1.type_code=#{typeCode}
+				</if>
+				<if test="typeName != null">
+					and t1.type_name=#{typeName}
+				</if>
+				<if test="groupName != null">
+					and t1.group_name=#{groupName}
+				</if>
+			</where>
+		</select>
+</mapper> 

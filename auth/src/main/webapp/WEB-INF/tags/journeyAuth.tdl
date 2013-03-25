@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
+<tlib-version>1.0</tlib-version>
+<jsp-version>2.0</jsp-version>
+<short-name>ja</short-name>
+<uri>/journeyAuthtaglib</uri>
+<tag>
+    <name>simpleMenu</name>
+    <tag-class>com.journey.base.auth.tag.SimpleMenuTag</tag-class>
+    <body-content>empty</body-content>
+</tag>
+<tag>
+    <name>wijmoMenu</name>
+    <tag-class>com.journey.base.auth.tag.WijmoMenuTag</tag-class>
+    <body-content>empty</body-content>
+</tag>
+<tag>
+    <name>grid</name>
+    <tag-class>com.journey.base.auth.tag.GridTag</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+        <name>id</name>
+        <required>true</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>url</name>
+        <required>true</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>height</name>
+        <required>false</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>width</name>
+        <required>false</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>pagesize</name>
+        <required>false</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>showIndex</name>
+        <required>false</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>autoFit</name>
+        <required>false</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+</tag>
+<tag>
+    <name>column</name>
+    <tag-class>com.journey.base.auth.tag.ColumnTag</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+        <name>header</name>
+        <required>true</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>field</name>
+        <required>true</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>width</name>
+        <required>false</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>align</name>
+        <required>false</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+    <attribute>
+        <name>wrap</name>
+        <required>false</required>
+        <rtexprvalue>false</rtexprvalue>
+    </attribute>
+</tag>
+</taglib>
